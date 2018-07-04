@@ -51,7 +51,7 @@ $(function() {
 
         // The test ensures the menu element is hidden by default by checking
         // if the 'body' element has 'menu-hidden' class name.
-        it('menu element is hidden by default', function() {
+        it('is hidden by default', function() {
             var elem = $('body');
 
             expect(elem.hasClass('menu-hidden')).toBe(true);
@@ -60,7 +60,7 @@ $(function() {
         // The test ensures the menu changes visibility when the menu icon
         // is clicked. The 'body' should not have 'menu-hidden' class name
         // after first click, after next click it should be set to true state.
-        it('menu changes visibility when icon is clicked', function() {
+        it('changes visibility when icon is clicked', function() {
             var icon = $('.menu-icon-link');
             var elem = $('body');
 
