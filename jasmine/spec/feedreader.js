@@ -27,19 +27,19 @@ $(function() {
         // The test loops through each feed in the allFeeds object
         // and ensures it has a URL defined and that the URL is not empty.
         it('URL defined and is not empty', function() {
-            allFeeds.forEach(function(feed) {
-                expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toBe(0);
-            });
+            for (const feed of allFeeds) {
+              expect(feed.url).toBeDefined();
+              expect(feed.url.length).not.toBe(0);
+            }
         });
 
          // The test loops through each feed in the allFeeds object
          // and ensures it has a name defined and that the name is not empty.
          it('name defined and is not empty', function() {
-             allFeeds.forEach(function(feed) {
-                 expect(feed.name).toBeDefined();
-                 expect(feed.name.length).not.toBe(0);
-             });
+             for (const feed of allFeeds) {
+               expect(feed.name).toBeDefined();
+               expect(feed.name.length).not.toBe(0);
+             }
          });
 
     });
@@ -86,15 +86,13 @@ $(function() {
         // to load '0' feed, when loading complete the callback done() will be fired
         // to continue test suite.
          beforeEach(function(done) {
-            loadFeed(0, function() {
-              done();
-            });
+            loadFeed(0, done);
          });
 
          // The main part of the test, checks if the number of the loaded feeds
          // is greater than 0. After finished done() is fired to continue testing.
          it('loadFeed function is called and completes its work', function(done) {
-            expect($('div.feed').find('.entry').length).toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
          });
     });
